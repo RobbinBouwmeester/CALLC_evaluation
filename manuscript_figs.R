@@ -544,10 +544,10 @@ par(mfrow=c(1,2),mar=c(10.1,4.1,4.1,2.1))
 plot(l1_cor,l2_cor,pch=10,xlab="Layer 1 correlation",ylab="Layer 2 correlation",xlim=c(0.0,1),ylim=c(0.0,1))
 abline(0,1,lty=2)
 
-barplot(perf_comp[order(l1_cor-l2_cor),c("l1_cor")]-perf_comp[order(l1_cor-l2_cor),c("l2_cor")],
+barplot(perf_comp[order(l2_cor-l1_cor),c("l2_cor")]-perf_comp[order(l2_cor-l1_cor),c("l1_cor")],
         ylab="Difference in correlation (Layer 2 - Layer 1)",  
-        names.arg=rownames(perf_comp[order(l1_cor-l2_cor),]),las=2,cex.names=0.425,
-        ylim=c(min(l1_cor-l2_cor)-0.05,max(l1_cor-l2_cor)+0.05))
+        names.arg=rownames(perf_comp[order(l2_cor-l1_cor),]),las=2,cex.names=0.425,
+        ylim=c(min(l2_cor-l1_cor)-0.05,max(l2_cor-l1_cor)+0.05))
 
 dev.off()
 
